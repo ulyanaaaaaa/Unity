@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 1601419120}
   - component: {fileID: 1601419121}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601419111}
   serializedVersion: 2
-  m_Mass: 3
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -530,8 +530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7
   _rigidbody: {fileID: 1601419112}
-  _position: {fileID: 1601419118}
   _currPlace: {x: 0, y: 0, z: 0}
+  pos: {fileID: 1641013369}
 --- !u!114 &1601419120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mas: 2
-  _rd: {fileID: 1601419112}
+  rd: {fileID: 1601419112}
 --- !u!114 &1601419121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,8 +574,9 @@ GameObject:
   - component: {fileID: 1641013366}
   - component: {fileID: 1641013367}
   - component: {fileID: 1641013368}
+  - component: {fileID: 1641013369}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,7 +668,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641013358}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -688,7 +689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mas: 9
-  _rd: {fileID: 1641013366}
+  rd: {fileID: 1641013366}
 --- !u!114 &1641013368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,3 +703,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1641013366}
+--- !u!114 &1641013369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641013358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a2883b0a30b334f9c9428f0eb3943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1641013363}

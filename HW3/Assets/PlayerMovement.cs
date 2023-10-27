@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _speed;
     [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private Transform _position;
     [SerializeField] private Vector3 _currPlace;
+    [SerializeField] private Enemy pos;
 
     void Update()
     {
@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.velocity = new Vector3(0, _speed, 0);
         }
-
-        _currPlace = new Vector3(_position.position.x, _position.position.y, _position.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             if (collision.gameObject.GetComponent<Mass>().mas < _rigidbody.mass)  
             {
                 Debug.Log("Масса игрока больше!");
-                _rigidbody.AddForce(_currPlace * 3, ForceMode.Impulse);
+                collision.gameObject.GetComponent<Mass>().rd.AddForce(pos.getPosition() * (-2), ForceMode.Impulse);
             }
             else
             {
